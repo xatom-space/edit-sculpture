@@ -27,19 +27,19 @@ export default async function WorkDetailPage({
         {/* LEFT COLUMN */}
         <aside className="w-[340px] px-10 pt-10 relative">
           <Link href="/" className="block">
-            <div className="text-2xl font-semibold hover:opacity-70 transition">
+            <div className="text-[2.25rem] font-semibold hover:opacity-70 transition leading-none">
               EDIT SCULPTURE
             </div>
-            <div className="text-[0.9rem] tracking-[0.25em] text-black/60">
+            <div className="text-[1.35rem] tracking-[0.25em] text-black/60">
               DAEVINCI
             </div>
           </Link>
 
           <div className="mt-16">
-            <div className="text-[1.05rem] font-semibold">{work.title}</div>
-            <div className="mt-2 text-[13px] text-black/60">{work.year}</div>
+            <div className="text-[1.575rem] font-semibold">{work.title}</div>
+            <div className="mt-2 text-[20px] text-black/60">{work.year}</div>
 
-            <div className="mt-8 space-y-4 text-[14px] leading-relaxed text-black/75">
+            <div className="mt-8 space-y-4 text-[21px] leading-relaxed text-black/75">
               {work.description.map((p) => (
                 <p key={p}>{p}</p>
               ))}
@@ -47,7 +47,7 @@ export default async function WorkDetailPage({
           </div>
 
           {/* MENU: 세로 고정 */}
-          <nav className="mt-10 flex flex-col gap-2 text-[1.05rem] text-black/60">
+          <nav className="mt-10 flex flex-col gap-2 text-[1.575rem] text-black/60">
             <Link href="/" className="hover:text-black transition">
               HOME
             </Link>
@@ -69,7 +69,7 @@ export default async function WorkDetailPage({
           </nav>
 
           {/* Editions */}
-          <div className="absolute left-10 bottom-10 w-[300px] text-[13px]">
+          <div className="absolute left-10 bottom-10 w-[300px] text-[20px]">
             <div className="text-sky-500">{work.editionsTitle}</div>
 
             <div className="mt-6 space-y-1 text-black/70">
