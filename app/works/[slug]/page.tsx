@@ -46,7 +46,8 @@ export default async function WorkDetailPage({
             </div>
           </div>
 
-          <nav className="mt-10 flex flex-col gap-2 text-[1.575rem] text-black/60">
+          {/* MENU */}
+          <nav className="mt-12 flex flex-col gap-3 text-[1.575rem] text-black/60">
             <Link href="/" className="hover:text-black transition">
               HOME
             </Link>
@@ -68,7 +69,7 @@ export default async function WorkDetailPage({
           </nav>
 
           {/* Editions */}
-          <div className="absolute left-10 bottom-10 w-[calc(100%-5rem)] text-[20px]">
+          <div className="absolute left-10 bottom-14 w-[calc(100%-5rem)] text-[20px]">
             <div className="text-sky-500">{work.editionsTitle}</div>
 
             <div className="mt-6 space-y-1 text-black/70">
