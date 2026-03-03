@@ -24,11 +24,17 @@ export default async function WorkDetailPage({
   return (
     <main className="min-h-screen bg-white text-black">
       <div className="flex">
-        {/* LEFT INFO */}
+        {/* LEFT INFO COLUMN */}
         <aside className="w-[340px] px-10 pt-10">
-          <div className="text-xl font-semibold">EDIT SCULPTURE</div>
-          <div className="text-xs tracking-[0.25em] text-black/60">DAEVINCI</div>
+          {/* 상단 로고(클릭하면 홈) */}
+          <Link href="/" className="block">
+            <div className="text-xl font-semibold hover:opacity-70 transition">
+              EDIT SCULPTURE
+            </div>
+            <div className="text-xs tracking-[0.25em] text-black/60">DAEVINCI</div>
+          </Link>
 
+          {/* 작품 제목/설명 */}
           <div className="mt-16">
             <div className="text-sm font-semibold tracking-wide">{work.title}</div>
             <div className="mt-2 text-[11px] tracking-wide text-black/60">
@@ -42,6 +48,7 @@ export default async function WorkDetailPage({
             </div>
           </div>
 
+          {/* 왼쪽 메뉴 */}
           <nav className="mt-10 space-y-2 text-sm text-black/45">
             <Link className="block hover:text-black" href="/">
               HOME
@@ -60,7 +67,8 @@ export default async function WorkDetailPage({
             </Link>
           </nav>
 
-          <div className="mt-14 text-[11px]">
+          {/* ✅ Editions: 사진 아랫면보다 살짝 위에 위치 (화면 하단 기준 고정) */}
+          <div className="fixed left-10 bottom-10 w-[300px] text-[11px]">
             <div className="text-sky-500">{work.editionsTitle}</div>
 
             <div className="mt-6 space-y-1 text-black/70">
@@ -77,15 +85,16 @@ export default async function WorkDetailPage({
           </div>
         </aside>
 
-        {/* RIGHT IMAGE */}
-        <section className="flex-1 p-8">
-          <div className="relative w-full min-h-[80vh]">
+        {/* RIGHT IMAGE AREA */}
+        {/* ✅ Works 썸네일 영역처럼: 좌측/상단 모서리에 딱 맞게 (패딩 제거) */}
+        <section className="flex-1">
+          <div className="relative h-screen w-full">
             <Image
               src={work.image}
               alt={work.title}
               fill
-              className="object-contain"
               priority
+              className="object-cover"
             />
           </div>
         </section>
