@@ -88,13 +88,15 @@ export default async function WorkDetailPage({
         {/* RIGHT IMAGE AREA */}
         <section className="flex-1 pt-10 pb-6 pr-14 pl-6 overflow-hidden">
           <div className="relative h-[calc(100vh-4rem)] w-full overflow-hidden">
-            <Image
-              src={work.image}
-              alt={work.title}
-              fill
-              priority
-              className="object-contain object-right-top scale-[1.2] origin-top-right"
-            />
+            <div className="absolute right-0 top-0 h-[120%] w-[120%]">
+              <Image
+                src={work.image}
+                alt={work.title}
+                fill
+                priority
+                className="object-contain object-right-top"
+              />
+            </div>
           </div>
         </section>
       </div>
