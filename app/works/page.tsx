@@ -1,6 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
-import { works } from "../data/works";
+
+const works = [
+  { slug: "clear-the-lane", image: "/p2.jpg", title: "CLEAR THE LANE" },
+  { slug: "work-3", image: "/p3.jpg", title: "WORK 3" },
+  { slug: "work-4", image: "/p4.jpg", title: "WORK 4" },
+  { slug: "work-5", image: "/p5.jpg", title: "WORK 5" },
+  { slug: "work-6", image: "/p6.jpg", title: "WORK 6" },
+  { slug: "work-7", image: "/p7.jpg", title: "WORK 7" },
+];
 
 export default function WorksPage() {
   return (
@@ -12,21 +20,11 @@ export default function WorksPage() {
           <div className="text-xs tracking-[0.25em] text-black/60">DAEVINCI</div>
 
           <nav className="mt-96 space-y-3 text-sm text-black/60">
-            <Link href="/" className="block hover:text-black">
-              HOME
-            </Link>
-            <Link href="/works" className="block hover:text-black">
-              WORKS
-            </Link>
-            <Link href="/behind-the-scenes" className="block hover:text-black">
-              BEHIND THE SCENES
-            </Link>
-            <Link href="/about" className="block hover:text-black">
-              ABOUT
-            </Link>
-            <Link href="/buy-prints" className="block hover:text-black">
-              BUY PRINTS
-            </Link>
+            <Link href="/" className="block hover:text-black">HOME</Link>
+            <Link href="/works" className="block hover:text-black">WORKS</Link>
+            <Link href="/behind-the-scenes" className="block hover:text-black">BEHIND THE SCENES</Link>
+            <Link href="/about" className="block hover:text-black">ABOUT</Link>
+            <Link href="/buy-prints" className="block hover:text-black">BUY PRINTS</Link>
           </nav>
         </aside>
 
@@ -46,7 +44,7 @@ export default function WorksPage() {
               <Link
                 key={w.slug}
                 href={`/works/${w.slug}`}
-                className="block"
+                className="block cursor-pointer"
                 aria-label={`Open ${w.title}`}
               >
                 <div className="relative w-full aspect-[4/3] overflow-hidden">
