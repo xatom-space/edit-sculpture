@@ -35,7 +35,7 @@ export default async function WorkDetailPage({
             </div>
           </Link>
 
-          {/* TITLE / YEAR / DESCRIPTION (back to original top position) */}
+          {/* TITLE / YEAR / DESCRIPTION */}
           <div className="mt-16">
             <div className="text-[1.575rem] font-semibold">{work.title}</div>
             <div className="mt-2 text-[20px] text-black/60">{work.year}</div>
@@ -47,8 +47,8 @@ export default async function WorkDetailPage({
             </div>
           </div>
 
-          {/* MENU (same visual condition as works, without pushing content down) */}
-          <nav className="absolute left-10 top-[24rem] space-y-[0.9rem] text-[1.05rem] text-black/60">
+          {/* MENU: moved lower than description */}
+          <nav className="mt-16 space-y-[0.9rem] text-[1.05rem] text-black/60">
             <Link href="/" className="block hover:text-black">
               HOME
             </Link>
