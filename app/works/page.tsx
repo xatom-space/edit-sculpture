@@ -45,36 +45,34 @@ export default function WorksPage() {
         </aside>
 
         {/* RIGHT GRID */}
-        <section className="ml-[260px] flex-1 pl-4 pr-14 pt-5 pb-5 relative z-0">
-          <div className="ml-auto max-w-[calc(100%-2rem)]">
-            <div
-              className="
-                grid
-                gap-1
-                grid-cols-1
-                min-[1000px]:grid-cols-2
-                min-[1600px]:grid-cols-3
-                min-[1900px]:grid-cols-4
-              "
-            >
-              {works.map((w) => (
-                <Link
-                  key={w.slug}
-                  href={`/works/${w.slug}`}
-                  className="block w-full cursor-pointer"
-                >
-                  <div className="relative w-full aspect-[4/3] overflow-hidden">
-                    <Image
-                      src={w.image}
-                      alt={w.title}
-                      fill
-                      className="object-cover hover:scale-105 transition-transform duration-300"
-                      priority={w.slug === "clear-the-lane"}
-                    />
-                  </div>
-                </Link>
-              ))}
-            </div>
+        <section className="ml-[260px] flex-1 pl-8 pr-14 pt-10 pb-10 relative z-0">
+          <div
+            className="
+              grid
+              gap-2
+              grid-cols-1
+              min-[1000px]:grid-cols-2
+              min-[1600px]:grid-cols-3
+              min-[1900px]:grid-cols-4
+            "
+          >
+            {works.map((w) => (
+              <Link
+                key={w.slug}
+                href={`/works/${w.slug}`}
+                className="block w-full cursor-pointer"
+              >
+                <div className="relative w-full aspect-[4/3] overflow-hidden">
+                  <Image
+                    src={w.image}
+                    alt={w.title}
+                    fill
+                    className="object-cover hover:scale-105 transition-transform duration-300"
+                    priority={w.slug === "clear-the-lane"}
+                  />
+                </div>
+              </Link>
+            ))}
           </div>
         </section>
       </div>
