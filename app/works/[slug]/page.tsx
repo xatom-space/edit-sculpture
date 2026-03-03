@@ -25,7 +25,7 @@ export default async function WorkDetailPage({
     <main className="min-h-screen bg-white text-black">
       <div className="flex">
         {/* LEFT INFO COLUMN */}
-        <aside className="w-[340px] px-10 pt-10">
+        <aside className="w-[340px] px-10 pt-10 relative">
           {/* 상단 로고(클릭하면 홈) */}
           <Link href="/" className="block">
             <div className="text-xl font-semibold hover:opacity-70 transition">
@@ -67,8 +67,8 @@ export default async function WorkDetailPage({
             </Link>
           </nav>
 
-          {/* ✅ Editions: 사진 아랫면보다 살짝 위에 위치 (화면 하단 기준 고정) */}
-          <div className="fixed left-10 bottom-10 w-[300px] text-[11px]">
+          {/* Editions: 이미지 아래쪽보다 살짝 위 (좌측 컬럼 안에서 고정) */}
+          <div className="absolute left-10 bottom-10 w-[300px] text-[11px]">
             <div className="text-sky-500">{work.editionsTitle}</div>
 
             <div className="mt-6 space-y-1 text-black/70">
@@ -86,15 +86,17 @@ export default async function WorkDetailPage({
         </aside>
 
         {/* RIGHT IMAGE AREA */}
-        {/* ✅ Works 썸네일 영역처럼: 좌측/상단 모서리에 딱 맞게 (패딩 제거) */}
-        <section className="flex-1">
-          <div className="relative h-screen w-full">
+        {/* ✅ Works 페이지와 동일한 시작점(좌상단)을 만들기 위해 px-8 pt-10 적용 */}
+        <section className="flex-1 px-8 pt-10">
+          {/* ✅ 화면 높이를 기준으로 가운데 정렬 => 위/아래 여백 동일 */}
+          <div className="relative h-[calc(100vh-2.5rem)] w-full">
             <Image
               src={work.image}
               alt={work.title}
               fill
               priority
-              className="object-cover"
+              className="object-contain object-left"
+              sizes="(max-width: 1200px) 100vw, 1200px"
             />
           </div>
         </section>
