@@ -35,8 +35,8 @@ export default async function WorkDetailPage({
             </div>
           </Link>
 
-          {/* MENU (same as works page conditions) */}
-          <nav className="absolute left-10 top-[24rem] space-y-[0.9rem] text-[1.05rem] text-black/60">
+          {/* MENU (same position/style as works page) */}
+          <nav className="mt-96 space-y-[0.9rem] text-[1.05rem] text-black/60">
             <Link href="/" className="block hover:text-black">
               HOME
             </Link>
