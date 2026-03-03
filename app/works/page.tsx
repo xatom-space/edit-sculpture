@@ -14,10 +14,14 @@ export default function WorksPage() {
   return (
     <main className="min-h-screen bg-white text-black">
       <div className="flex">
-        {/* LEFT SIDEBAR (fixed) */}
+        {/* LEFT SIDEBAR (고정) */}
         <aside className="fixed left-0 top-0 h-screen w-[260px] bg-white px-10 pt-10">
-          <div className="text-xl font-semibold">EDIT SCULPTURE</div>
-          <div className="text-xs tracking-[0.25em] text-black/60">DAEVINCI</div>
+          <div className="text-xl font-semibold">
+            EDIT SCULPTURE
+          </div>
+          <div className="text-xs tracking-[0.25em] text-black/60">
+            DAEVINCI
+          </div>
 
           <nav className="mt-20 space-y-3 text-sm text-black/60">
             <Link href="/" className="block hover:text-black">
@@ -39,18 +43,22 @@ export default function WorksPage() {
         </aside>
 
         {/* RIGHT GRID */}
-        <section className="ml-[260px] flex-1 px-6 pt-8">
+        <section className="ml-[260px] flex-1 px-8 pt-10">
           <div
             className="
-              grid gap-2
+              grid
+              gap-2
               grid-cols-1
-              sm:grid-cols-2
-              min-[900px]:grid-cols-3
-              min-[1200px]:grid-cols-4
+              min-[640px]:grid-cols-2
+              min-[960px]:grid-cols-3
+              min-[1280px]:grid-cols-4
             "
           >
             {works.map((src) => (
-              <div key={src} className="relative w-full aspect-[4/3]">
+              <div
+                key={src}
+                className="relative w-full aspect-[4/3] overflow-hidden"
+              >
                 <Image
                   src={src}
                   alt="work"
@@ -58,8 +66,8 @@ export default function WorksPage() {
                   className="object-cover"
                   sizes="
                     (max-width: 639px) 100vw,
-                    (max-width: 899px) 50vw,
-                    (max-width: 1199px) 33vw,
+                    (max-width: 959px) 50vw,
+                    (max-width: 1279px) 33vw,
                     25vw
                   "
                   priority={src === "/p2.jpg"}
