@@ -37,9 +37,7 @@ export default async function WorkDetailPage({
 
           <div className="mt-16">
             <div className="text-sm font-semibold">{work.title}</div>
-            <div className="mt-2 text-[11px] text-black/60">
-              {work.year}
-            </div>
+            <div className="mt-2 text-[11px] text-black/60">{work.year}</div>
 
             <div className="mt-8 space-y-4 text-[12px] leading-relaxed text-black/75">
               {work.description.map((p) => (
@@ -75,19 +73,16 @@ export default async function WorkDetailPage({
         </aside>
 
         {/* RIGHT IMAGE AREA */}
-        {/* works 썸네일 시작점과 동일 */}
-        <section className="flex-1 px-8 pt-10 pr-16">
-          <div className="h-[calc(100vh-2.5rem)] flex items-center">
-            {/* 높이를 줄여 위/아래 여백 동일하게 */}
-            <div className="relative w-full h-[80vh]">
-              <Image
-                src={work.image}
-                alt={work.title}
-                fill
-                priority
-                className="object-contain object-right"
-              />
-            </div>
+        {/* works 썸네일 상단(pt-10)과 시작점을 맞추고, 상/하 여백 동일 */}
+        <section className="flex-1 px-8 pt-10 pb-10 pr-14">
+          <div className="relative h-[calc(100vh-5rem)] w-full">
+            <Image
+              src={work.image}
+              alt={work.title}
+              fill
+              priority
+              className="object-contain object-right"
+            />
           </div>
         </section>
       </div>
