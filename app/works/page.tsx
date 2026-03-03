@@ -14,7 +14,7 @@ export default function WorksPage() {
   return (
     <main className="min-h-screen bg-white text-black">
       <div className="flex">
-        {/* 왼쪽 메뉴: 항상 고정 */}
+        {/* Left menu (fixed) */}
         <aside className="fixed left-0 top-0 h-screen w-[260px] bg-white px-10 pt-10">
           <div className="text-xl font-semibold">EDIT SCULPTURE</div>
           <div className="text-xs tracking-[0.25em] text-black/60">DAEVINCI</div>
@@ -38,26 +38,22 @@ export default function WorksPage() {
           </nav>
         </aside>
 
-        {/* 오른쪽: 그리드 */}
+        {/* Right grid */}
         <section className="ml-[260px] flex-1 px-8 pt-10">
           <div
             className="
               grid
               gap-2
               grid-cols-1
-              md:grid-cols-2
-              lg:grid-cols-3
-              xl:grid-cols-4
+              min-[1000px]:grid-cols-2
+              min-[1600px]:grid-cols-3
+              min-[2200px]:grid-cols-4
             "
           >
             {works.map((src) => (
               <div
                 key={src}
-                className="
-                  relative w-full
-                  aspect-[4/3]
-                  overflow-hidden
-                "
+                className="relative w-full aspect-[4/3] overflow-hidden"
               >
                 <Image
                   src={src}
@@ -65,9 +61,9 @@ export default function WorksPage() {
                   fill
                   className="object-cover"
                   sizes="
-                    (max-width: 767px) 90vw,
-                    (max-width: 1023px) 45vw,
-                    (max-width: 1279px) 30vw,
+                    (max-width: 999px) 90vw,
+                    (max-width: 1599px) 45vw,
+                    (max-width: 2199px) 30vw,
                     23vw
                   "
                   priority={src === "/p2.jpg"}
