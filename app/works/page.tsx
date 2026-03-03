@@ -25,23 +25,13 @@ export default function WorksPage() {
             </div>
           </Link>
 
-          {/* MENU: aligned to detail-page visual Y position */}
+          {/* MENU: unified anchor position */}
           <nav className="absolute left-10 top-[34rem] space-y-[0.9rem] text-[1.05rem] text-black/60">
-            <Link href="/" className="block hover:text-black">
-              HOME
-            </Link>
-            <Link href="/works" className="block hover:text-black">
-              WORKS
-            </Link>
-            <Link href="/behind-the-scenes" className="block hover:text-black">
-              BEHIND THE SCENES
-            </Link>
-            <Link href="/about" className="block hover:text-black">
-              ABOUT
-            </Link>
-            <Link href="/buy-prints" className="block hover:text-black">
-              BUY PRINTS
-            </Link>
+            <Link href="/" className="block hover:text-black">HOME</Link>
+            <Link href="/works" className="block hover:text-black">WORKS</Link>
+            <Link href="/behind-the-scenes" className="block hover:text-black">BEHIND THE SCENES</Link>
+            <Link href="/about" className="block hover:text-black">ABOUT</Link>
+            <Link href="/buy-prints" className="block hover:text-black">BUY PRINTS</Link>
           </nav>
         </aside>
 
@@ -58,11 +48,7 @@ export default function WorksPage() {
             "
           >
             {works.map((w) => (
-              <Link
-                key={w.slug}
-                href={`/works/${w.slug}`}
-                className="block w-full cursor-pointer"
-              >
+              <Link key={w.slug} href={`/works/${w.slug}`} className="block w-full cursor-pointer">
                 <div className="relative w-full aspect-[4/3] overflow-hidden">
                   <div className="absolute inset-0 scale-[0.97]">
                     <Image

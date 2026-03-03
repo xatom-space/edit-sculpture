@@ -35,7 +35,6 @@ export default async function WorkDetailPage({
             </div>
           </Link>
 
-          {/* TITLE / YEAR / DESCRIPTION */}
           <div className="mt-16">
             <div className="text-[1.575rem] font-semibold">{work.title}</div>
             <div className="mt-2 text-[20px] text-black/60">{work.year}</div>
@@ -47,35 +46,23 @@ export default async function WorkDetailPage({
             </div>
           </div>
 
-          {/* MENU: moved lower than description */}
-          <nav className="mt-16 space-y-[0.9rem] text-[1.05rem] text-black/60">
-            <Link href="/" className="block hover:text-black">
-              HOME
-            </Link>
-            <Link href="/works" className="block hover:text-black">
-              WORKS
-            </Link>
-            <Link href="/behind-the-scenes" className="block hover:text-black">
-              BEHIND THE SCENES
-            </Link>
-            <Link href="/about" className="block hover:text-black">
-              ABOUT
-            </Link>
-            <Link href="/buy-prints" className="block hover:text-black">
-              BUY PRINTS
-            </Link>
+          {/* MENU: unified anchor position */}
+          <nav className="absolute left-10 top-[34rem] space-y-[0.9rem] text-[1.05rem] text-black/60">
+            <Link href="/" className="block hover:text-black">HOME</Link>
+            <Link href="/works" className="block hover:text-black">WORKS</Link>
+            <Link href="/behind-the-scenes" className="block hover:text-black">BEHIND THE SCENES</Link>
+            <Link href="/about" className="block hover:text-black">ABOUT</Link>
+            <Link href="/buy-prints" className="block hover:text-black">BUY PRINTS</Link>
           </nav>
 
           {/* Editions */}
           <div className="absolute left-10 bottom-14 w-[calc(100%-5rem)] text-[20px]">
             <div className="text-sky-500">{work.editionsTitle}</div>
-
             <div className="mt-6 space-y-1 text-black/70">
               {work.editions.map((e) => (
                 <div key={e}>{e}</div>
               ))}
             </div>
-
             <div className="mt-6 space-y-1 text-black/45 italic">
               {work.printInfo.map((i) => (
                 <div key={i}>{i}</div>
