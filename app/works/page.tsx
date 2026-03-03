@@ -14,7 +14,7 @@ export default function WorksPage() {
   return (
     <main className="min-h-screen bg-white text-black">
       <div className="flex">
-        {/* LEFT SIDEBAR (fixed) */}
+        {/* LEFT SIDEBAR */}
         <aside className="fixed left-0 top-0 h-screen w-[260px] bg-white px-10 pt-10">
           <div className="text-xl font-semibold">
             EDIT SCULPTURE
@@ -51,7 +51,7 @@ export default function WorksPage() {
               grid-cols-1
               min-[1000px]:grid-cols-2
               min-[1600px]:grid-cols-3
-              min-[2200px]:grid-cols-4
+              min-[1900px]:grid-cols-4
             "
           >
             {works.map((src) => (
@@ -64,12 +64,6 @@ export default function WorksPage() {
                   alt="work"
                   fill
                   className="object-cover"
-                  sizes="
-                    (max-width: 999px) 100vw,
-                    (max-width: 1599px) 50vw,
-                    (max-width: 2199px) 33vw,
-                    25vw
-                  "
                   priority={src === "/p2.jpg"}
                 />
               </div>
