@@ -25,7 +25,7 @@ export default function WorksPage() {
             </div>
           </Link>
 
-          <nav className="mt-96 space-y-[0.9rem] text-[1.05rem] text-black/60">
+          <nav className="mt-[32rem] space-y-[0.9rem] text-[1.05rem] text-black/60">
             <Link href="/" className="block hover:text-black">
               HOME
             </Link>
