@@ -1,14 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-
-const works = [
-  "/p2.jpg",
-  "/p3.jpg",
-  "/p4.jpg",
-  "/p5.jpg",
-  "/p6.jpg",
-  "/p7.jpg",
-];
+import { works } from "../data/works";
 
 export default function WorksPage() {
   return (
@@ -16,14 +8,9 @@ export default function WorksPage() {
       <div className="flex">
         {/* LEFT SIDEBAR */}
         <aside className="fixed left-0 top-0 h-screen w-[260px] bg-white px-10 pt-10">
-          <div className="text-xl font-semibold">
-            EDIT SCULPTURE
-          </div>
-          <div className="text-xs tracking-[0.25em] text-black/60">
-            DAEVINCI
-          </div>
+          <div className="text-xl font-semibold">EDIT SCULPTURE</div>
+          <div className="text-xs tracking-[0.25em] text-black/60">DAEVINCI</div>
 
-          {/* 🔥 3배 더 아래로 */}
           <nav className="mt-96 space-y-3 text-sm text-black/60">
             <Link href="/" className="block hover:text-black">
               HOME
@@ -55,18 +42,23 @@ export default function WorksPage() {
               min-[1900px]:grid-cols-4
             "
           >
-            {works.map((src) => (
-              <div
-                key={src}
-                className="relative w-full aspect-[4/3] overflow-hidden"
+            {works.map((w) => (
+              <Link
+                key={w.slug}
+                href={`/works/${w.slug}`}
+                className="block"
+                aria-label={`Open ${w.title}`}
               >
-                <Image
-                  src={src}
-                  alt="work"
-                  fill
-                  className="object-cover"
-                />
-              </div>
+                <div className="relative w-full aspect-[4/3] overflow-hidden">
+                  <Image
+                    src={w.image}
+                    alt={w.title}
+                    fill
+                    className="object-cover"
+                    priority={w.slug === "clear-the-lane"}
+                  />
+                </div>
+              </Link>
             ))}
           </div>
         </section>
