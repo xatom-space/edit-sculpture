@@ -20,9 +20,7 @@ export default function WorksPage() {
             <div className="text-xl font-semibold hover:opacity-70 transition">
               EDIT SCULPTURE
             </div>
-            <div className="text-xs tracking-[0.25em] text-black/60">
-              DAEVINCI
-            </div>
+            <div className="text-xs tracking-[0.25em] text-black/60">DAEVINCI</div>
           </Link>
 
           <nav className="mt-96 space-y-3 text-sm text-black/60">
@@ -63,7 +61,7 @@ export default function WorksPage() {
                 className="block w-full cursor-pointer"
               >
                 <div className="relative w-full aspect-[4/3] overflow-hidden">
-                  <div className="absolute inset-0 scale-95">
+                  <div className="absolute inset-0 scale-[0.97]">
                     <Image
                       src={w.image}
                       alt={w.title}
