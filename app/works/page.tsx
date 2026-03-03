@@ -25,7 +25,8 @@ export default function WorksPage() {
             </div>
           </Link>
 
-          <nav className="absolute left-10 top-[21rem] space-y-[0.9rem] text-[1.05rem] text-black/60">
+          {/* MENU: aligned to detail-page visual Y position */}
+          <nav className="absolute left-10 top-[34rem] space-y-[0.9rem] text-[1.05rem] text-black/60">
             <Link href="/" className="block hover:text-black">
               HOME
             </Link>
