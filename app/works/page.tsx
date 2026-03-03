@@ -16,7 +16,6 @@ export default function WorksPage() {
       <div className="flex">
         {/* LEFT SIDEBAR */}
         <aside className="fixed left-0 top-0 z-10 h-screen w-[260px] bg-white px-10 pt-10">
-          {/* 🔥 EDIT SCULPTURE → HOME */}
           <Link href="/" className="block">
             <div className="text-xl font-semibold hover:opacity-70 transition">
               EDIT SCULPTURE
@@ -63,7 +62,7 @@ export default function WorksPage() {
                 href={`/works/${w.slug}`}
                 className="block w-full cursor-pointer"
               >
-                <div className="relative mx-auto w-[90%] aspect-[4/3] overflow-hidden">
+                <div className="relative w-full aspect-[4/3] overflow-hidden scale-[0.92] origin-center">
                   <Image
                     src={w.image}
                     alt={w.title}
