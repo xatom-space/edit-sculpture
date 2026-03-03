@@ -35,6 +35,25 @@ export default async function WorkDetailPage({
             </div>
           </Link>
 
+          {/* MENU (same as works page conditions) */}
+          <nav className="absolute left-10 top-[24rem] space-y-[0.9rem] text-[1.05rem] text-black/60">
+            <Link href="/" className="block hover:text-black">
+              HOME
+            </Link>
+            <Link href="/works" className="block hover:text-black">
+              WORKS
+            </Link>
+            <Link href="/behind-the-scenes" className="block hover:text-black">
+              BEHIND THE SCENES
+            </Link>
+            <Link href="/about" className="block hover:text-black">
+              ABOUT
+            </Link>
+            <Link href="/buy-prints" className="block hover:text-black">
+              BUY PRINTS
+            </Link>
+          </nav>
+
           <div className="mt-16">
             <div className="text-[1.575rem] font-semibold">{work.title}</div>
             <div className="mt-2 text-[20px] text-black/60">{work.year}</div>
@@ -45,28 +64,6 @@ export default async function WorkDetailPage({
               ))}
             </div>
           </div>
-
-          {/* MENU */}
-          <nav className="mt-12 flex flex-col gap-3 text-[1.575rem] text-black/60">
-            <Link href="/" className="hover:text-black transition">
-              HOME
-            </Link>
-            <Link href="/works" className="hover:text-black transition">
-              WORKS
-            </Link>
-            <Link
-              href="/behind-the-scenes"
-              className="hover:text-black transition"
-            >
-              BEHIND THE SCENES
-            </Link>
-            <Link href="/about" className="hover:text-black transition">
-              ABOUT
-            </Link>
-            <Link href="/buy-prints" className="hover:text-black transition">
-              BUY PRINTS
-            </Link>
-          </nav>
 
           {/* Editions */}
           <div className="absolute left-10 bottom-14 w-[calc(100%-5rem)] text-[20px]">
