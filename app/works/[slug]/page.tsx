@@ -46,12 +46,26 @@ export default async function WorkDetailPage({
             </div>
           </div>
 
-          <nav className="mt-10 space-y-2 text-sm text-black/45">
-            <Link href="/">HOME</Link>
-            <Link href="/works">WORKS</Link>
-            <Link href="/behind-the-scenes">BEHIND THE SCENES</Link>
-            <Link href="/about">ABOUT</Link>
-            <Link href="/buy-prints">BUY PRINTS</Link>
+          {/* MENU: 세로 고정 */}
+          <nav className="mt-10 flex flex-col gap-2 text-sm text-black/60">
+            <Link href="/" className="hover:text-black transition">
+              HOME
+            </Link>
+            <Link href="/works" className="hover:text-black transition">
+              WORKS
+            </Link>
+            <Link
+              href="/behind-the-scenes"
+              className="hover:text-black transition"
+            >
+              BEHIND THE SCENES
+            </Link>
+            <Link href="/about" className="hover:text-black transition">
+              ABOUT
+            </Link>
+            <Link href="/buy-prints" className="hover:text-black transition">
+              BUY PRINTS
+            </Link>
           </nav>
 
           {/* Editions */}
@@ -73,7 +87,6 @@ export default async function WorkDetailPage({
         </aside>
 
         {/* RIGHT IMAGE AREA */}
-        {/* works 썸네일 상단(pt-10)과 시작점을 맞추고, 상/하 여백 동일 */}
         <section className="flex-1 px-8 pt-10 pb-10 pr-14">
           <div className="relative h-[calc(100vh-5rem)] w-full">
             <Image
