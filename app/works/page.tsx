@@ -1,102 +1,80 @@
 import Image from "next/image";
 import Link from "next/link";
-import { works } from "../../data/works";
 
-export default async function WorkDetailPage({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}) {
-  const { slug } = await params;
-  const work = works.find((w) => w.slug === slug);
+const works = [
+  { slug: "clear-the-lane", image: "/p2.jpg", title: "CLEAR THE LANE" },
+  { slug: "work-3", image: "/p3.jpg", title: "WORK 3" },
+  { slug: "work-4", image: "/p4.jpg", title: "WORK 4" },
+  { slug: "work-5", image: "/p5.jpg", title: "WORK 5" },
+  { slug: "work-6", image: "/p6.jpg", title: "WORK 6" },
+  { slug: "work-7", image: "/p7.jpg", title: "WORK 7" },
+];
 
-  if (!work) {
-    return (
-      <main className="min-h-screen bg-white text-black p-10">
-        <p>Work not found.</p>
-        <Link href="/works" className="underline">
-          Back to works
-        </Link>
-      </main>
-    );
-  }
-
+export default function WorksPage() {
   return (
     <main className="min-h-screen bg-white text-black">
       <div className="flex">
-        {/* LEFT COLUMN */}
-        <aside className="w-[clamp(420px,30vw,560px)] px-10 pt-10 relative">
+        {/* LEFT SIDEBAR: 260px -> 364px (1.4x) */}
+        <aside className="fixed left-0 top-0 z-10 h-screen w-[364px] bg-white px-10 pt-10">
           <Link href="/" className="block">
-            <div className="text-[2.25rem] font-semibold hover:opacity-70 transition leading-none">
+            <div className="text-xl font-semibold hover:opacity-70 transition">
               EDIT SCULPTURE
             </div>
-            <div className="text-[1.35rem] tracking-[0.25em] text-black/60">
+            <div className="text-xs tracking-[0.25em] text-black/60">
               DAEVINCI
             </div>
           </Link>
 
-          <div className="mt-16">
-            <div className="text-[1.575rem] font-semibold">{work.title}</div>
-            <div className="mt-2 text-[20px] text-black/60">{work.year}</div>
-
-            <div className="mt-8 space-y-4 text-[21px] leading-relaxed text-black/75">
-              {work.description.map((p) => (
-                <p key={p}>{p}</p>
-              ))}
-            </div>
-          </div>
-
-          <nav className="mt-12 flex flex-col gap-3 text-[1.575rem] text-black/60">
-            <Link href="/" className="hover:text-black transition">
+          <nav className="mt-96 space-y-3 text-sm text-black/60">
+            <Link href="/" className="block hover:text-black">
               HOME
             </Link>
-            <Link href="/works" className="hover:text-black transition">
+            <Link href="/works" className="block hover:text-black">
               WORKS
             </Link>
-            <Link
-              href="/behind-the-scenes"
-              className="hover:text-black transition"
-            >
+            <Link href="/behind-the-scenes" className="block hover:text-black">
               BEHIND THE SCENES
             </Link>
-            <Link href="/about" className="hover:text-black transition">
+            <Link href="/about" className="block hover:text-black">
               ABOUT
             </Link>
-            <Link href="/buy-prints" className="hover:text-black transition">
+            <Link href="/buy-prints" className="block hover:text-black">
               BUY PRINTS
             </Link>
           </nav>
-
-          {/* Editions */}
-          <div className="absolute left-10 bottom-14 w-[calc(100%-5rem)] text-[20px]">
-            <div className="text-sky-500">{work.editionsTitle}</div>
-
-            <div className="mt-6 space-y-1 text-black/70">
-              {work.editions.map((e) => (
-                <div key={e}>{e}</div>
-              ))}
-            </div>
-
-            <div className="mt-6 space-y-1 text-black/45 italic">
-              {work.printInfo.map((i) => (
-                <div key={i}>{i}</div>
-              ))}
-            </div>
-          </div>
         </aside>
 
-        {/* RIGHT IMAGE AREA */}
-        <section className="flex-1 pt-10 pb-6 pr-14 pl-6 overflow-hidden">
-          <div className="relative h-[calc(100vh-4rem)] w-full overflow-hidden">
-            <div className="absolute right-0 top-0 h-[120%] w-[120%]">
-              <Image
-                src={work.image}
-                alt={work.title}
-                fill
-                priority
-                className="object-contain object-right-top"
-              />
-            </div>
+        {/* RIGHT GRID */}
+        <section className="ml-[364px] flex-1 pl-8 pr-14 pt-10 pb-10 relative z-0">
+          <div
+            className="
+              grid
+              gap-1
+              grid-cols-1
+              min-[1000px]:grid-cols-2
+              min-[1600px]:grid-cols-3
+              min-[1900px]:grid-cols-4
+            "
+          >
+            {works.map((w) => (
+              <Link
+                key={w.slug}
+                href={`/works/${w.slug}`}
+                className="block w-full cursor-pointer"
+              >
+                <div className="relative w-full aspect-[4/3] overflow-hidden">
+                  <div className="absolute inset-0 scale-90">
+                    <Image
+                      src={w.image}
+                      alt={w.title}
+                      fill
+                      className="object-cover hover:scale-105 transition-transform duration-300"
+                      priority={w.slug === "clear-the-lane"}
+                    />
+                  </div>
+                </div>
+              </Link>
+            ))}
           </div>
         </section>
       </div>
