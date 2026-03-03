@@ -14,8 +14,11 @@ export default function WorksPage() {
   return (
     <main className="min-h-screen bg-white text-black">
       <div className="flex">
+
         {/* LEFT SIDEBAR */}
         <aside className="fixed left-0 top-0 z-10 h-screen w-[260px] bg-white px-10 pt-10">
+          
+          {/* 🔥 EDIT SCULPTURE → HOME */}
           <Link href="/" className="block">
             <div className="text-xl font-semibold hover:opacity-70 transition">
               EDIT SCULPTURE
@@ -26,21 +29,11 @@ export default function WorksPage() {
           </Link>
 
           <nav className="mt-96 space-y-3 text-sm text-black/60">
-            <Link href="/" className="block hover:text-black">
-              HOME
-            </Link>
-            <Link href="/works" className="block hover:text-black">
-              WORKS
-            </Link>
-            <Link href="/behind-the-scenes" className="block hover:text-black">
-              BEHIND THE SCENES
-            </Link>
-            <Link href="/about" className="block hover:text-black">
-              ABOUT
-            </Link>
-            <Link href="/buy-prints" className="block hover:text-black">
-              BUY PRINTS
-            </Link>
+            <Link href="/" className="block hover:text-black">HOME</Link>
+            <Link href="/works" className="block hover:text-black">WORKS</Link>
+            <Link href="/behind-the-scenes" className="block hover:text-black">BEHIND THE SCENES</Link>
+            <Link href="/about" className="block hover:text-black">ABOUT</Link>
+            <Link href="/buy-prints" className="block hover:text-black">BUY PRINTS</Link>
           </nav>
         </aside>
 
@@ -49,7 +42,7 @@ export default function WorksPage() {
           <div
             className="
               grid
-              gap-6
+              gap-2
               grid-cols-1
               min-[1000px]:grid-cols-2
               min-[1600px]:grid-cols-3
@@ -59,10 +52,10 @@ export default function WorksPage() {
             {works.map((w) => (
               <Link
                 key={w.slug}
-                href={`/works/${w.slug}`}
+                href={${w.slug}}
                 className="block w-full cursor-pointer"
               >
-                <div className="relative w-full aspect-[4/3] overflow-hidden scale-[0.92] origin-center">
+                <div className="relative w-full aspect-[4/3] overflow-hidden">
                   <Image
                     src={w.image}
                     alt={w.title}
@@ -75,7 +68,8 @@ export default function WorksPage() {
             ))}
           </div>
         </section>
+
       </div>
     </main>
   );
-}
+} 
