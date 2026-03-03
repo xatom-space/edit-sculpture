@@ -63,13 +63,15 @@ export default function WorksPage() {
                 className="block w-full cursor-pointer"
               >
                 <div className="relative w-full aspect-[4/3] overflow-hidden">
-                  <Image
-                    src={w.image}
-                    alt={w.title}
-                    fill
-                    className="object-cover hover:scale-105 transition-transform duration-300"
-                    priority={w.slug === "clear-the-lane"}
-                  />
+                  <div className="absolute inset-0 scale-90">
+                    <Image
+                      src={w.image}
+                      alt={w.title}
+                      fill
+                      className="object-cover hover:scale-105 transition-transform duration-300"
+                      priority={w.slug === "clear-the-lane"}
+                    />
+                  </div>
                 </div>
               </Link>
             ))}
