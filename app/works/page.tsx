@@ -14,7 +14,7 @@ export default function WorksPage() {
   return (
     <main className="min-h-screen bg-white text-black">
       <div className="flex">
-        {/* LEFT SIDEBAR: 260px -> 364px (1.4x) */}
+        {/* LEFT SIDEBAR */}
         <aside className="fixed left-0 top-0 z-10 h-screen w-[364px] bg-white px-10 pt-10">
           <Link href="/" className="block">
             <div className="text-xl font-semibold hover:opacity-70 transition">
@@ -63,15 +63,13 @@ export default function WorksPage() {
                 className="block w-full cursor-pointer"
               >
                 <div className="relative w-full aspect-[4/3] overflow-hidden">
-                  <div className="absolute inset-0 scale-90">
-                    <Image
-                      src={w.image}
-                      alt={w.title}
-                      fill
-                      className="object-cover hover:scale-105 transition-transform duration-300"
-                      priority={w.slug === "clear-the-lane"}
-                    />
-                  </div>
+                  <Image
+                    src={w.image}
+                    alt={w.title}
+                    fill
+                    className="object-cover hover:scale-105 transition-transform duration-300"
+                    priority={w.slug === "clear-the-lane"}
+                  />
                 </div>
               </Link>
             ))}
