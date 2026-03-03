@@ -16,6 +16,7 @@ export default function WorksPage() {
       <div className="flex">
         {/* LEFT SIDEBAR */}
         <aside className="fixed left-0 top-0 z-10 h-screen w-[260px] bg-white px-10 pt-10">
+          {/* 🔥 EDIT SCULPTURE → HOME */}
           <Link href="/" className="block">
             <div className="text-xl font-semibold hover:opacity-70 transition">
               EDIT SCULPTURE
@@ -45,7 +46,7 @@ export default function WorksPage() {
         </aside>
 
         {/* RIGHT GRID */}
-        <section className="ml-[260px] flex-1 px-8 pt-10 pb-10 pr-14">
+        <section className="ml-[260px] flex-1 px-8 pt-10 relative z-0">
           <div
             className="
               grid
@@ -62,7 +63,7 @@ export default function WorksPage() {
                 href={`/works/${w.slug}`}
                 className="block w-full cursor-pointer"
               >
-                <div className="relative mx-auto w-[92%] aspect-[4/3] overflow-hidden">
+                <div className="relative mx-auto w-[90%] aspect-[4/3] overflow-hidden">
                   <Image
                     src={w.image}
                     alt={w.title}
