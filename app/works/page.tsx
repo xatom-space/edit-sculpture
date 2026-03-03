@@ -16,14 +16,11 @@ export default function WorksPage() {
       <div className="flex">
         {/* LEFT SIDEBAR */}
         <aside className="fixed left-0 top-0 h-screen w-[260px] bg-white px-10 pt-10">
-          <div className="text-xl font-semibold">
-            EDIT SCULPTURE
-          </div>
-          <div className="text-xs tracking-[0.25em] text-black/60">
-            DAEVINCI
-          </div>
+          <div className="text-xl font-semibold">EDIT SCULPTURE</div>
+          <div className="text-xs tracking-[0.25em] text-black/60">DAEVINCI</div>
 
-          <nav className="mt-20 space-y-3 text-sm text-black/60">
+          {/* ✅ 메뉴 5개를 더 아래로 */}
+          <nav className="mt-32 space-y-3 text-sm text-black/60">
             <Link href="/" className="block hover:text-black">
               HOME
             </Link>
@@ -55,10 +52,7 @@ export default function WorksPage() {
             "
           >
             {works.map((src) => (
-              <div
-                key={src}
-                className="relative w-full aspect-[4/3] overflow-hidden"
-              >
+              <div key={src} className="relative w-full aspect-[4/3] overflow-hidden">
                 <Image
                   src={src}
                   alt="work"
