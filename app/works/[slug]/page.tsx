@@ -35,8 +35,20 @@ export default async function WorkDetailPage({
             </div>
           </Link>
 
-          {/* MENU (same position/style as works page) */}
-          <nav className="mt-96 space-y-[0.9rem] text-[1.05rem] text-black/60">
+          {/* TITLE / YEAR / DESCRIPTION (back to original top position) */}
+          <div className="mt-16">
+            <div className="text-[1.575rem] font-semibold">{work.title}</div>
+            <div className="mt-2 text-[20px] text-black/60">{work.year}</div>
+
+            <div className="mt-8 space-y-4 text-[21px] leading-relaxed text-black/75">
+              {work.description.map((p) => (
+                <p key={p}>{p}</p>
+              ))}
+            </div>
+          </div>
+
+          {/* MENU (same visual condition as works, without pushing content down) */}
+          <nav className="absolute left-10 top-[24rem] space-y-[0.9rem] text-[1.05rem] text-black/60">
             <Link href="/" className="block hover:text-black">
               HOME
             </Link>
@@ -53,17 +65,6 @@ export default async function WorkDetailPage({
               BUY PRINTS
             </Link>
           </nav>
-
-          <div className="mt-16">
-            <div className="text-[1.575rem] font-semibold">{work.title}</div>
-            <div className="mt-2 text-[20px] text-black/60">{work.year}</div>
-
-            <div className="mt-8 space-y-4 text-[21px] leading-relaxed text-black/75">
-              {work.description.map((p) => (
-                <p key={p}>{p}</p>
-              ))}
-            </div>
-          </div>
 
           {/* Editions */}
           <div className="absolute left-10 bottom-14 w-[calc(100%-5rem)] text-[20px]">
