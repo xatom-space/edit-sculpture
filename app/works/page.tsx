@@ -49,7 +49,7 @@ export default function WorksPage() {
           <div
             className="
               grid
-              gap-0.5
+              gap-[0.175rem]
               grid-cols-1
               min-[1000px]:grid-cols-2
               min-[1600px]:grid-cols-3
