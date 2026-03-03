@@ -13,8 +13,8 @@ export default async function WorkDetailPage({
   if (!work) {
     return (
       <main className="min-h-screen bg-white text-black p-10">
-        <p className="text-lg">Work not found.</p>
-        <Link className="underline" href="/works">
+        <p>Work not found.</p>
+        <Link href="/works" className="underline">
           Back to works
         </Link>
       </main>
@@ -24,18 +24,20 @@ export default async function WorkDetailPage({
   return (
     <main className="min-h-screen bg-white text-black">
       <div className="flex">
-        {/* LEFT INFO COLUMN */}
+        {/* LEFT COLUMN */}
         <aside className="w-[340px] px-10 pt-10 relative">
           <Link href="/" className="block">
             <div className="text-xl font-semibold hover:opacity-70 transition">
               EDIT SCULPTURE
             </div>
-            <div className="text-xs tracking-[0.25em] text-black/60">DAEVINCI</div>
+            <div className="text-xs tracking-[0.25em] text-black/60">
+              DAEVINCI
+            </div>
           </Link>
 
           <div className="mt-16">
-            <div className="text-sm font-semibold tracking-wide">{work.title}</div>
-            <div className="mt-2 text-[11px] tracking-wide text-black/60">
+            <div className="text-sm font-semibold">{work.title}</div>
+            <div className="mt-2 text-[11px] text-black/60">
               {work.year}
             </div>
 
@@ -47,14 +49,14 @@ export default async function WorkDetailPage({
           </div>
 
           <nav className="mt-10 space-y-2 text-sm text-black/45">
-            <Link className="block hover:text-black" href="/">HOME</Link>
-            <Link className="block hover:text-black" href="/works">WORKS</Link>
-            <Link className="block hover:text-black" href="/behind-the-scenes">BEHIND THE SCENES</Link>
-            <Link className="block hover:text-black" href="/about">ABOUT</Link>
-            <Link className="block hover:text-black" href="/buy-prints">BUY PRINTS</Link>
+            <Link href="/">HOME</Link>
+            <Link href="/works">WORKS</Link>
+            <Link href="/behind-the-scenes">BEHIND THE SCENES</Link>
+            <Link href="/about">ABOUT</Link>
+            <Link href="/buy-prints">BUY PRINTS</Link>
           </nav>
 
-          {/* ✅ Editions: 화면 아래에서 살짝 위 */}
+          {/* Editions */}
           <div className="absolute left-10 bottom-10 w-[300px] text-[11px]">
             <div className="text-sky-500">{work.editionsTitle}</div>
 
@@ -73,18 +75,17 @@ export default async function WorkDetailPage({
         </aside>
 
         {/* RIGHT IMAGE AREA */}
-        <section className="flex-1 px-8 pt-10">
-          {/* ✅ 화면 높이 전체를 쓰되, 내부 박스를 "세로 가운데"로 배치 */}
-          <div className="h-[calc(100vh-2.5rem)] w-full flex items-center">
-            {/* ✅ 이미지 박스 높이를 줄여서 위/아래 여백이 '같아지게' */}
-            <div className="relative w-full h-[82vh]">
+        {/* works 썸네일 시작점과 동일 */}
+        <section className="flex-1 px-8 pt-10 pr-16">
+          <div className="h-[calc(100vh-2.5rem)] flex items-center">
+            {/* 높이를 줄여 위/아래 여백 동일하게 */}
+            <div className="relative w-full h-[80vh]">
               <Image
                 src={work.image}
                 alt={work.title}
                 fill
                 priority
                 className="object-contain object-right"
-                sizes="(max-width: 1200px) 100vw, 1200px"
               />
             </div>
           </div>
