@@ -14,13 +14,15 @@ export default function WorksPage() {
   return (
     <main className="min-h-screen bg-white text-black">
       <div className="flex">
-        {/* LEFT SIDEBAR: 364px -> 419px (about +15%) */}
+        {/* LEFT SIDEBAR */}
         <aside className="fixed left-0 top-0 z-10 h-screen w-[419px] bg-white px-10 pt-10">
           <Link href="/" className="block">
-            <div className="text-xl font-semibold hover:opacity-70 transition">
+            <div className="text-[2.25rem] font-semibold hover:opacity-70 transition leading-none">
               EDIT SCULPTURE
             </div>
-            <div className="text-xs tracking-[0.25em] text-black/60">DAEVINCI</div>
+            <div className="text-[1.35rem] tracking-[0.25em] text-black/60">
+              DAEVINCI
+            </div>
           </Link>
 
           <nav className="mt-96 space-y-3 text-sm text-black/60">
