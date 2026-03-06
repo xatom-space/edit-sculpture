@@ -73,8 +73,8 @@ export default function AboutPage() {
             </div>
           </div>
 
-          <div className="xl:pt-16">
-            <div className="relative mx-auto aspect-[16/9] w-full max-w-[780px] overflow-hidden bg-black/10">
+          <div className="xl:flex xl:items-center">
+            <div className="relative mx-auto aspect-[16/9] w-full max-w-[780px] overflow-hidden bg-black/10 xl:translate-y-10">
               <Image
                 src="/p8.jpg"
                 alt="Daevinci work process"
