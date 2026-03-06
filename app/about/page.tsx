@@ -43,7 +43,7 @@ export default function AboutPage() {
 
         <section className="mt-28 grid grid-cols-1 gap-14 xl:grid-cols-[1.1fr_0.9fr]">
           <div>
-            <h2 className="text-[2rem] text-sky-500">ABOUT</h2>
+            <h2 className="text-[1.575rem] text-sky-500">ABOUT</h2>
 
             <div className="mt-10 max-w-[900px] space-y-8 text-[1.15rem] leading-[1.9] tracking-[0.01em] font-serif">
               <p>
@@ -84,7 +84,7 @@ export default function AboutPage() {
         </section>
 
         <section className="mt-20">
-          <h3 className="text-[2rem] text-sky-500">WORK PROCESS</h3>
+          <h3 className="text-[1.575rem] text-sky-500">WORK PROCESS</h3>
 
           <div className="mt-10 overflow-x-auto">
             <div className="min-w-[1200px]">
