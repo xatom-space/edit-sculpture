@@ -7,7 +7,10 @@ const processSteps = [
   { title: "03 Location\nResearch", desc: "Select &\nStudy Locations" },
   { title: "04 Revisit & Refinement", desc: "Refine Light &\nPerspective" },
   { title: "05 Precision\nCapture", desc: "Capture Each\nElement Precisely" },
-  { title: "06 Structural\nAssembly", desc: "Assemble\nAll Elements\nInto One\nConstructed Image" },
+  {
+    title: "06 Structural\nAssembly",
+    desc: "Assemble\nAll Elements\nInto One\nConstructed Image",
+  },
   { title: "07 Final Production", desc: "Polish & Prepare\nfor Print" },
 ];
 
@@ -48,8 +51,8 @@ export default function AboutPage() {
             <div className="mt-10 max-w-[900px] space-y-8 text-[1.15rem] leading-[1.9] tracking-[0.01em] font-serif">
               <p>
                 Daevinci is a visual artist who constructs hyper-real scenes through the
-                recomposition of photographed fragments. He approaches photography not as a means
-                of capturing moments, but as a way of building them.
+                recomposition of photographed fragments. He approaches photography not as a means of
+                capturing moments, but as a way of building them.
               </p>
               <p>
                 He envisions new realities and, in order to express them, explores and photographs
@@ -62,10 +65,10 @@ export default function AboutPage() {
                 moment, yet every element within it once physically existed.
               </p>
               <p>
-                Rather than asking whether an image is real or not, he questions whether the
-                reality he imagines can be believed by the viewer. At the boundary between reality
-                and the surreal, the constructed scene begins to function as reality the moment it
-                is accepted.
+                Rather than asking whether an image is real or not, he questions whether the reality
+                he imagines can be believed by the viewer. At the boundary between reality and the
+                surreal, the constructed scene begins to function as reality the moment it is
+                accepted.
               </p>
             </div>
           </div>
@@ -111,22 +114,40 @@ export default function AboutPage() {
 
           <div className="mt-10 max-w-[980px] space-y-8 text-[1.1rem] leading-[1.9] font-serif">
             <p>Daevinci builds his images from fragments of reality.</p>
+
             <p>
               Each work begins with a scene he imagines as plausible within the logic of the real
               world. Rather than documenting a moment, he constructs one. To materialize this
-              vision, he searches for and photographs each element individually.
+              vision, he searches for and photographs each element individually — locations,
+              objects, light, atmosphere — across different times and spaces.
             </p>
+
             <p>
               He places strong emphasis on physical realism. Light, perspective, scale, and spatial
-              coherence must align before the image can exist as a believable moment.
+              coherence must align before the image can exist as a believable moment. For this
+              reason, he revisits locations repeatedly, refining conditions until they support the
+              constructed vision. Every fragment is captured intentionally, and no element is
+              incidental.
             </p>
+
             <p>
               The process does not rely on computer-generated imagery, stock material, or
-              illustrated components. All visual elements originate from his own photographs.
+              illustrated components. All visual elements originate from his own photographs. The
+              final image is assembled through structural editing, where independent fragments are
+              reconstructed into a single cohesive reality.
             </p>
+
             <p>
-              Daevinci oversees every stage of production himself from concept and field research to
-              photography and post-production.
+              Daevinci oversees every stage of production himself — from concept and field research
+              to photography and post-production — maintaining complete control over the integrity of
+              the work. The strength of the final image is inseparable from the clarity of the idea
+              and the precision of each captured fragment.
+            </p>
+
+            <p>
+              Because each work requires extensive research, repeated location visits, and
+              meticulous assembly, the process is time-intensive. The result is not an altered
+              photograph, but a constructed moment — a reality built from reality.
             </p>
           </div>
         </section>
